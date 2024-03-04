@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
+li, summary { list-style: none;}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: "Caveat", cursive;
+    background-image: url(./img/bg3.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* hazır kodlarım */
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+
+    & header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        & p {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        & form {
+            display: flex;
+            gap: 8px;
+
+            & input {
+                background-color: #fff;
+                border: none;
+                padding: 5px 10px;
+                font-size: 24px;
+                outline: none;
+                font-weight: 600;
+            }
+
+            & button {
+                background-color: #fff;
+                border: none;
+                padding: 5px 10px;
+            }
+        }
+    }
+
+    & main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+.current {
+    color: #fff;
+}
+
+.current-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    & p {
+        font-size: 24px;
+        font-weight: 500;
+            & span {
+                font-size: 30px;
+                font-weight: 700;
+            }
+    }
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+
+    > h1 {
+        background-color: #fff;
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+.day-hour {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        & h1 {
+            font-size: 24px;
+        }
+    }
+
+    & h1 {
+        font-size: 36px;
+    }
+
+    & p {
+        font-size: 24px;
+    }
+}
+
+.loading {
+    height: 788px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-icon {
+    width: 100px;
+    height: 100px;
+    border: 12px solid #222831;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 12px solid transparent;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.error-item {
+    width: 300px;
+    background-color: #ff3333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    gap: 16px;
+
+    & i {
+        font-size: 50px;
+    }
+
+    & p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    & button {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        & i {
+            font-size: 32px !important;
+        }
+    }
+}
+
+@media (width < 1440px) {
+
+    .container {
+        width: 100%;
+    }
+    
+}
